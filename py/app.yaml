@@ -1,6 +1,0 @@
-runtime: python39  # GAE Python 3.9 runtime
-
-entrypoint: gunicorn -b :$PORT app:app  # Gunicorn sebagai server WSGI
-
-env_variables:
-  FLASK_ENV: "production"  # Setel environment ke production
