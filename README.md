@@ -1,4 +1,4 @@
-# MilQu Check
+<h1 align="center">MilQu Check</h1>
 <p align="center">
   <img src="https://github.com/Candrawijay/capstone/blob/main/image/image1.jpg?raw=true" alt="image1" width="100" style="margin-right: 10px;"/>
   <img src="https://github.com/Candrawijay/capstone/blob/main/image/image2.jpg?raw=true" alt="image2" width="100" style="margin-right: 10px;"/>
