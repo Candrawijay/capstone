@@ -1,8 +1,7 @@
 const express = require('express');
 const axios = require('axios');
 const app = express();
-
-const port = 3000;
+const port = process.env.PORT || 3000; // Gunakan port dari variabel lingkungan atau default ke 3000
 
 let model = null;
 
@@ -43,17 +42,18 @@ app.post('/predict', (req, res) => {
     return res.status(400).json({ error: 'Invalid input types' });
   }
 
-  // Simulasi prediksi menggunakan model
-  // Sesuaikan logika ini dengan model prediksi Anda
-  let score = (pH + Temprature + Taste + Odor + Fat + Turbidity + Colour) / 7;
+  let score = pH; // Menggunakan pH sebagai satu-satunya faktor
 
   let prediction;
-  if (score <= model.low_threshold) {
+  if (score <= 2.2) {
     prediction = 'low';
-  } else if (score <= model.medium_threshold) {
+  } else if (score <= 4.0) {
     prediction = 'medium';
-  } else {
+  } else if (score <= 7.0){
     prediction = 'high';
+  }
+  else {
+    prediction = 'invalid data';
   }
 
   res.json({ prediction });
